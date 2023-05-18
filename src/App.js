@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+// import { useState} from 'react';
+// import { useEffect } from 'react';
 import './App.css';
+// import Navbar from './Components/Navbar.js';
+import { AppProvider } from './Context/AppContext';
+// import Setting from './Components/Setting';
+import DisplayTheme from './Components/DisplayTheme';
+import ToggleTheme from './Components/ToggleTheme';
+import { Reducer } from './Components/Reducer';
+import Setting from './Components/Setting';
+import Navbar from './Components/Navbar';
+import {  ThemeProvider } from './Context/ThemeContext';
+
 
 function App() {
   return (
+    <>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <AppProvider>
+          <ThemeProvider>
+              <Navbar/>
+              <hr/>  
+              <hr/>
+              <Setting/>
+              <hr/>
+              <ToggleTheme/>          
+              <DisplayTheme/>
+          </ThemeProvider>
+       </AppProvider>
     </div>
+    </>
   );
 }
 
