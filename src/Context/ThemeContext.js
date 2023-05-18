@@ -8,10 +8,7 @@ export function useThemeContext(){
 function reducer(state,action){
    if(action.type === "toggleTheme"){
     return {...state,theme:state.theme === "Dark" ? "light" :"Dark"};
-   }else if(typeof Error){
-        throw new Error();
-   }
-   else{
+   }else{
     throw new Error('eror bangsattt');
    }
 }
